@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set Images Version
-        run: echo "KNP_IMAGE_VERSION=v2.0.${{ github.run_number }}" >> $GITHUB_ENV
+        run: echo "KNP_IMAGE_VERSION=${{ vars.KNP_BASE_IMAGE_VERSION || 'v2.0.93' }}" >> $GITHUB_ENV
       - name: Set up Docker
         uses: docker/setup-docker-action@v5
         with:
